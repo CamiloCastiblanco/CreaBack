@@ -30,6 +30,7 @@ public class UserController {
     CreaServiceImpl letsDrawServiceImpl; 
     
     @RequestMapping(value = "/addUser/{name}/{skin}/{id}", method = RequestMethod.GET)
+    @CrossOrigin (origins = "*")
     public String createAndAddUser(@PathVariable("name") String name,@PathVariable("skin") String skin ,@PathVariable("id") int id ) throws CreaServiceException {
         letsDrawServiceImpl.addUserToRoomById(new User(name, skin) , id);
         return name;    
@@ -37,6 +38,7 @@ public class UserController {
     
     
     @RequestMapping(value = "/delUser/{name}/{id}", method = RequestMethod.GET)
+    @CrossOrigin (origins = "*")
     public String deleteUser(@PathVariable("name") String name ,@PathVariable("id") int id ) throws CreaServiceException {
         letsDrawServiceImpl.delUser(name, id);
         return name;    

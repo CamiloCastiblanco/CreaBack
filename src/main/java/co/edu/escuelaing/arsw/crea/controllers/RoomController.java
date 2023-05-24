@@ -32,7 +32,7 @@ public class RoomController {
     @Autowired
     CreaServiceImpl CreaServiceImpl;
     
-    @CrossOrigin
+    @CrossOrigin (origins = "*")
     @RequestMapping("/")
     private String testing() throws CreaServiceException {
         CreaServiceImpl.createRoom(new RoomServiceImpl("sala", "En", false, 10));
@@ -78,9 +78,9 @@ public class RoomController {
                 + "    \"name\": " + "\"" + word2 +"\"\n"
                 + "}";
     }
-    */ 
-    
-    @CrossOrigin
+    */
+
+    @CrossOrigin (origins = "*")
     @RequestMapping(value = "/getWord/{id}/", method = RequestMethod.GET)
     public String getWord(@PathVariable("id") int id) throws CreaServiceException {
         String word = "N O N E";
@@ -93,8 +93,8 @@ public class RoomController {
                 + "    \"name\": " + "\"" + word +"\"\n"
                 + "}";
     }
-    
-    @CrossOrigin
+
+    @CrossOrigin (origins = "*")
     @RequestMapping(value = "/getTimer/{id}/", method = RequestMethod.GET)
     public String getTimer(@PathVariable("id") int id) throws CreaServiceException {
         int timer = 0; 
@@ -107,10 +107,10 @@ public class RoomController {
                 + "    \"timer\": " + "\"" + timer +"\"\n"
                 + "}";
     }
-            
-    
-    
-    @CrossOrigin
+
+
+
+    @CrossOrigin (origins = "*")
     @RequestMapping(value = "/addRoom/{name}/{lenguaje}/{priv}/{limit}/", method = RequestMethod.GET)
     public int addRoom(@PathVariable("name") String name, @PathVariable("lenguaje") String lenguaje,
             @PathVariable("priv") boolean priv, @PathVariable("limit") int limit) throws CreaServiceException{
@@ -126,8 +126,8 @@ public class RoomController {
 
         return CreaServiceImpl.getRooms().get(CreaServiceImpl.getRooms().size() - 1).getRoom().getId();
     }
-    
-    @CrossOrigin
+
+    @CrossOrigin (origins = "*")
     @RequestMapping(value = "/sendMessage/{id}/{name}/{message}/", method = RequestMethod.GET)
     public void sendMessage(@PathVariable("id") int id , @PathVariable("name") String name, @PathVariable("message") String message) throws CreaServiceException{
         System.out.println("entro el mensaje");
@@ -154,8 +154,8 @@ public class RoomController {
             }
         }
     }
-    
-    @CrossOrigin
+
+    @CrossOrigin (origins = "*")
     @RequestMapping(value = "/getMessages/{id}/", method = RequestMethod.GET)
     public String getMessages(@PathVariable("id") int id ) throws CreaServiceException{
         String json = "";  
@@ -187,7 +187,7 @@ public class RoomController {
      * @param id
      * @return
      */
-    @CrossOrigin
+    @CrossOrigin (origins = "*")
     @RequestMapping(value = "/stopTimer/{id}", method = RequestMethod.GET)
     public void stopTimer(@PathVariable("id") int id ){
          for (RoomServiceImpl i : CreaServiceImpl.getRooms()) {
@@ -196,8 +196,8 @@ public class RoomController {
             }
          }
     }
-    
-    @CrossOrigin
+
+    @CrossOrigin (origins = "*")
     @RequestMapping(value = "/startTimer/{id}", method = RequestMethod.GET)
     public void startTimer(@PathVariable("id") int id ){
          for (RoomServiceImpl i : CreaServiceImpl.getRooms()) {
@@ -206,8 +206,8 @@ public class RoomController {
             }
          }
     }
-    
-    @CrossOrigin
+
+    @CrossOrigin (origins = "*")
     @RequestMapping(value = "/setBoard", method = {RequestMethod.GET, RequestMethod.PUT , RequestMethod.POST } )
     public void setBoard(@RequestBody String board){
         JSONObject boardj = new JSONObject(board);  
@@ -221,8 +221,8 @@ public class RoomController {
             }
         }
     }
-    
-    @CrossOrigin
+
+    @CrossOrigin (origins = "*")
     @RequestMapping(value = "/getBoard/{id}", method = RequestMethod.GET)
     public String setBoard(@PathVariable("id") int id  ){
         String finalBoard = ""; 
@@ -235,11 +235,11 @@ public class RoomController {
                 + "    \"board\": " + "\"" + finalBoard +"\"\n"
                 + "}";
     }
-    
-    
-    
-    
-    @CrossOrigin
+
+
+
+
+    @CrossOrigin (origins = "*")
     @RequestMapping(value = "/getRoomInfo/{id}", method = RequestMethod.GET)
     public String getRoomInfo(@PathVariable("id") int id) throws CreaServiceException {
         //CreaServiceImpl.createRoom(new RoomServiceImpl("sala", "En", false, 10));
@@ -285,7 +285,7 @@ public class RoomController {
                 + "}";
 
     }
-    @CrossOrigin
+    @CrossOrigin (origins = "*")
     @RequestMapping("/rooms")
     private String rooms() throws CreaServiceException {
         String salida = "";
