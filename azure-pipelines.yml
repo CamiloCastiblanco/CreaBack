@@ -12,15 +12,16 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- task: DotNetCoreCLI@2
-  inputs:
-    command: 'build'
 - task: SonarCloudPrepare@1
   inputs:
     SonarCloud: 'CreaSonarCloud'
     organization: 'franciscomarquez0748'
     scannerMode: 'MSBuild'
     projectKey: 'creaProyecto'
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'build'
+
 - task: SonarCloudAnalyze@1
 - task: Maven@3
   inputs:
