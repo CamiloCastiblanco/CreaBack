@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     
     <groupId>co.edu.escuelaing.arsw</groupId>
-    <artifactId>letsDrawBack</artifactId>
+    <artifactId>CreaBack</artifactId>
     <version>1.0-SNAPSHOT</version>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -24,7 +24,7 @@
                     <target>1.8</target>
                     <archive>
                         <manifest>
-                            <mainClass>co.edu.escuelaing.arsw.letsdraw.LetsDrawApplication</mainClass>
+                            <mainClass>co.edu.escuelaing.arsw.crea.CreaApplication</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
@@ -92,5 +92,5 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-    <name>letsDrawBack</name>
+    <name>CreaBack</name>
 </project>
