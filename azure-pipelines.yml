@@ -18,10 +18,16 @@ steps:
     organization: 'franciscomarquez0748'
     scannerMode: 'MSBuild'
     projectKey: 'creaProyecto'
-- task: DotNetCoreCLI@2
+- task: Maven@4
   inputs:
-    command: 'build'
-
+    mavenPomFile: 'pom.xml'
+    publishJUnitResults: true
+    testResultsFiles: '**/surefire-reports/TEST-*.xml'
+    javaHomeOption: 'JDKVersion'
+    mavenVersionOption: 'Default'
+    mavenAuthenticateFeed: false
+    effectivePomSkip: false
+    sonarQubeRunAnalysis: false
 - task: SonarCloudAnalyze@1
 - task: Maven@3
   inputs:
