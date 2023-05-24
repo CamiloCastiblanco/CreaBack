@@ -12,9 +12,9 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- task: VSBuild@1
+- task: DotNetCoreCLI@2
   inputs:
-    solution: '**\*.sln'
+    command: 'build'
 - task: SonarCloudPrepare@1
   inputs:
     SonarCloud: 'CreaSonarCloud'
