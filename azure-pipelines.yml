@@ -38,6 +38,7 @@ steps:
     mavenVersionOption: 'Default'
     mavenAuthenticateFeed: false
     effectivePomSkip: false
+    sonarQubeRunAnalysis: false
 
 - task: SonarCloudPublish@1
   inputs:
