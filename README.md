@@ -3,21 +3,6 @@
 
 Es un juego multijugador en tiempo real, basado en el juego pictionary, el cual cuenta con un sistema de turnos, donde un jugador se encarga de dibujar una palabra especifica definida por el sistema y el resto de jugadores se encarga de adivinarla, mientras mas rápido se adivine, más puntos se obtienen.
 
-## Diagramas
-### casos de uso
-![img/img2.png](img/img2.png)
-![img/img3.png](img/img3.png)
-
-### diagrama de componentes
-![img/img5.png](img/img5.png)
-
-### diagrama de despliegue
-![img/img6.png](img/img6.png)
-
-### diagrama de clases
-![img/img7.png](img/img7.png)
-
-
 ## Calidad de codigo y ci
 ### Back-end
 
